@@ -1,0 +1,9 @@
+# OS-specific metadata files
+.DS_Store
+
+# Jekyll / Ruby dependencies and bundler files
+.bundle/
+vendor/
+
+# Compiled website output (generated locally by Jekyll)
+_site/

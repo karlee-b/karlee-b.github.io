@@ -1,0 +1,186 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a202c; /* Deep modern dark mode background */
+    color: #fff;
+    overflow-x: hidden; /* Prevents horizontal scrollbars from the marquee */
+    width: 100%;
+}
+
+.main-header {
+    padding: 30px;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #a0aec0;
+}
+
+.link-wrapper {
+    width: 100%;
+    text-align: center; 
+}
+
+.linkedin-link {
+    color: #3182ce;
+    font-weight: bold;
+}
+
+.github-link {
+    color: #3182ce;
+    font-weight: bold;
+}
+:root {
+    --marquee-speed: 25s; 
+    --gap: 2rem;          
+}
+
+.marquee-container {
+    position: relative;
+    width: 100%;
+    height: 140px; 
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    white-space: nowrap;
+    will-change: transform; 
+    animation: scroll var(--marquee-speed) linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-100% - var(--gap))); }
+}
+
+/* Shared text-bubble styles */
+.marquee-track span {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: inline-block;
+}
+
+/* Back Layer: Languages (Muted, Small) */
+.lang {
+    font-size: 1.5rem;          
+    color: #40619a;            ;               
+    z-index: 1;
+}
+
+/* Front Layer: Skills (Bright Blue, Large) */
+.skill {
+    font-size: 1.7rem;          
+    color: #3182ce;             
+    z-index: 2;                 
+    text-shadow: 0 4px 12px rgba(49, 130, 206, 0.3); 
+}
+
+.description-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;            
+    margin: 40px auto !important;
+    padding: 0 20px;
+}
+
+.description-header {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.description-block h1 {
+    margin: 0 0 16px 0 !important;       
+    color: #a0aec0 !important;
+    font-size: 2.5rem !important;        
+    font-weight: 700;
+}
+
+.description-para {
+    margin: 0 !important;
+    color: #cbd5e0 !important;
+    font-size: 1.2rem !important;
+    max-width: 600px !important;
+    line-height: 1.6 !important;
+}
+
+.application-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 30px auto;
+    max-width: 900px;
+    width: 100%;
+}
+
+.image-wrapper {
+    flex: 1 1 350px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.application-block:hover .project-image {
+    transform: scale(1.03);
+}
+
+.project-info {
+    flex: 2 1 450px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.project-info p {
+    color: #cbd5e0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}

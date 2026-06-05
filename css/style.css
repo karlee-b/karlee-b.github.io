@@ -133,7 +133,25 @@ body {
     line-height: 1.6 !important;
 }
 
-.application-block {
+.career-header {
+    background: transparent !important;
+    margin: 0 !important;
+    color: #cbd5e0;
+    text-align:center;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.personal-projects-header {
+    background: transparent !important;
+    margin: 0 !important;
+    color: #cbd5e0;
+    text-align:center;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.project-block {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -152,15 +170,19 @@ body {
     overflow: hidden;
 }
 
-.project-image {
+/* This targets any image OR video inside your wrapper */
+.image-wrapper img,
+.image-wrapper video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
+    object-fit: cover; /* Keeps things crisp and filled */
+}
+.project-asset {
     transition: transform 0.3s ease;
 }
 
-.application-block:hover .project-image {
+.project-block:hover .project-asset {
     transform: scale(1.03);
 }
 
@@ -183,4 +205,17 @@ body {
     font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.project-info h3 a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Reveals a smooth underline only when hovered */
+.project-info h3 a:hover {
+    text-decoration: underline;
+    text-decoration-color: #3182ce;
+    text-underline-offset: 4px;
 }
